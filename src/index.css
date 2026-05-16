@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Barlow', system-ui, sans-serif;
+  --font-condensed: 'Barlow Condensed', system-ui, sans-serif;
+
+  --color-brand-primary: #F97316;
+  --color-brand-secondary: #FB923C;
+  --color-brand-success: #22C55E;
+  
+  --color-background-base: #111827;
+  --color-background-card: #1F2937;
+  --color-background-elevated: #374151;
+  
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #9CA3AF;
+  --color-text-muted: #6B7280;
+}
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600;700;800&display=swap');
+
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-[var(--color-background-base)] text-[var(--color-text-primary)] antialiased font-sans selection:bg-brand-primary selection:text-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-condensed tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  
+  .glass-card {
+    @apply bg-[#1F2937]/80 backdrop-blur-xl border border-white/5;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-primary to-brand-secondary;
+  }
+}
